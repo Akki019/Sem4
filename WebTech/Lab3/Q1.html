@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Q1.css" rel="stylesheet" />
+    <style>
+        body
+        {
+            margin-top: 70px;
+            margin-bottom: 110px;
+            background-color: antiquewhite;
+        }
+        h1,h4,h2
+        {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: blueviolet;
+            text-align: center;
+        }
+        h3
+        {
+            display: inline;
+        }
+        img
+        {
+            height: 350px;
+            width: 32.5%;
+        }
+        div.images
+        {
+            margin-top: 2%;
+            margin-bottom: 2%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            padding-left: 1%;
+            background-color: rgb(225, 212, 67);
+        }
+        div.incard
+        {
+            width: 30%;
+            float: left;
+            padding: 20px;
+            border: 3px solid red;
+            margin: 2px;
+        }
+        /* div.card:hover
+        {
+            box-shadow: 3px;
+            size: 150%;
+        } */
+        div.about
+        {
+            margin: 20px;
+            color :cadetblue;
+            padding: 20px;
+            margin-bottom: 50px;
+            height: 180px;
+            border: 8px solid black;
+            border-radius: 3%;
+        }
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+          background-color: #111;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: blueviolet;
+            overflow: hidden;
+        }
+        .footer {
+            margin-left: 1%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 98%;
+            text-align: center;
+            padding: 3px;
+            background-color: DarkSalmon;
+            color: white;
+        }
+        .header {
+            margin-left: 1%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 98%;
+            text-align: center;
+            padding: 3px;
+        }
+        </style>
+</head>
+<body>
+    <div class="header">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <h1>University of Petroleum and Energy Science</h1>
+    <h4>Dehradun, Uttrakhand</h4>
+    <br>
+    <h2>University of Yesterday</h2>
+    <br>
+    <br>
+    <div>
+        <p>
+            Established in 2003, this university is making me cry for last 2 years.
+        </p>
+    </div>
+    <div class="images">
+        <img src="upesimg1.jpeg">
+        <img src="upesimg2.jpeg">
+        <img src="upesimg3.jpeg">
+    </div>
+    <div class="about">
+        <div class="card" style="margin-left: 3%; width:1200px;">
+            <div class="front">
+            <div class="incard">
+                <h3 class="card">Academic Excellence</h3>
+                <p class="card">Experience an immersive, personalised learning environment with accomplished, globally-acclaimed and award-winning academicians.</p>
+            </div>
+            </div>
+            <div class="back">
+                <div class="incard">
+                    <h3>Know more</h3>
+                    <p>Click here<br><br><br></p>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="margin-left: 36%; width:1200px;">
+            <div class="front">
+            <div class="incard">
+                <h3 class="card">Global University</h3>
+                <p class="card">Get ready to become global citizens of the future with exclusive international collaborations.<br><br></p>
+            </div>
+            </div>
+            <div class="back">
+                <div class="incard">
+                    <h3>Know more</h3>
+                    <p>Click here<br><br><br></p>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="margin-left: 68%; width:1200px; margin-right: 10px;">
+            <div class="front" >
+            <div class="incard">
+                <h3>Start-up University</h3>
+                <p>Transform your business idea into reality with globally-acclaimed expertise under our unique incubator program — 'Runway'</p>
+            </div>
+            </div>
+            <div class="back">
+                <div class="incard">
+                    <h3>Know more</h3>
+                    <p>Click here<br><br><br></p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="incard">
+            <h3 class="card">Global University</h3>
+            <p class="card">Get ready to become global citizens of the future with exclusive international collaborations.</p>
+        </div>
+        <div class="incard">
+            <h3 class="card">Start-up University</h3>
+            <p class="card">Transform your business idea into reality with globally-acclaimed expertise under our unique incubator program — 'Runway'</p>
+        </div> -->
+    </div>
+        <div class="footer">
+            <h3>Footer</h4><br>
+            <p>footer</p>
+        </div>
+</body>
+</html>

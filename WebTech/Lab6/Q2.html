@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.answer{
+            width: 300px;
+            border-width: 5px;
+            border-color: slategrey;
+        }
+        button{
+            background-color: rgb(197, 134, 255);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="answer" id="answer">
+            <h3>Hello</h3>
+        </div>
+        <div class="button">
+            <button onclick="f()">Click here</button>
+        </div>
+        <div class="p2" id="p2" onmouseenter=a() onmouseleave=b()>
+            <h3>Hi</h3>
+        </div>
+    </div>
+</body>
+<script>
+    function f(){
+        console.log("clicked")
+        num=Math.floor(Math.random() * 11);
+        document.getElementById("answer").style.backgroundColor="black"
+        document.getElementById("answer").style.color="white"
+    }
+    function a(){
+        console.log("clicked")
+        num=Math.floor(Math.random() * 11);
+        document.getElementById("p2").style.backgroundColor="black"
+        document.getElementById("p2").style.color="white"
+    }
+    function b(){
+        console.log("clicked")
+        num=Math.floor(Math.random() * 11);
+        document.getElementById("p2").style.backgroundColor="white"
+        document.getElementById("p2").style.color="black"
+    }
+</script>
+</html>

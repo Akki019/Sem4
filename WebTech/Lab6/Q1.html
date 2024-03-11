@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.answer{
+            width: 300px;
+            border-width: 5px;
+            border-color: slategrey;
+        }
+        button{
+            background-color: rgb(197, 134, 255);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="answer" id="answer">
+            <h3>Click to get a random number</h3>
+        </div>
+        <div class="button">
+            <button onclick="f()">Click here</button>
+        </div>
+    </div>
+</body>
+<script>
+    function f(){
+        console.log("clicked")
+        num=Math.floor(Math.random() * 11);
+        document.getElementById("answer").innerHTML=`<h3>${num}<h3>`
+    }
+</script>
+</html>
