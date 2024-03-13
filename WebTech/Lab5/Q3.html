@@ -3,69 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            /* display: flex;
-            justify-content: center; */
+            display: flex;
+            justify-content: center;
             align-items: center;
             height: 100vh;
         }
-        .calculator{
+
+        .calculator {
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
             border-radius: 8px;
-            width: 300px;
+            padding: 20px;
+            text-align: center;
         }
-        .result{
-            margin-top: 10px;
-            margin-left: 25px;
+
+        .calculator input[type="text"] {
+            width: 100%;
             margin-bottom: 10px;
-            background-color: rgb(235, 227, 227);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 2px;
-            border-radius: 5px;
-            width: 250px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        .clickable{
-            margin-top: 5px;
-            background-color: rgb(235, 227, 227);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 2px;
-            border-radius: 5px;
-            width: 10px;
+
+        .calculator button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .calculator button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <h1>Calculator</h1>
     <div class="calculator">
-        <div class="result">
-            <h2>0</h2>
+        <h2>Simple Calculator</h2>
+        <input type="text" id="display" disabled>
+        <div>
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('+')">+</button>
         </div>
-        <div class="clickable">
-            C
+        <div>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('-')">-</button>
         </div>
-        <div class="clickable">
-            %
+        <div>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('*')">*</button>
         </div>
-        <div class="clickable">
-            /
-        </div>
-        <div class="clickable">
-            X
-        </div>
-        <div class="clickable">
-            +
-        </div>
-        <div class="clickable">
-            =
+        <div>
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="addToDisplay('/')">/</button>
         </div>
     </div>
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            var displayValue = document.getElementById('display').value;
+            var result = eval(displayValue); // Using eval() for simplicity, not recommended for production
+            document.getElementById('display').value = result;
+        }
+    </script>
 </body>
 </html>

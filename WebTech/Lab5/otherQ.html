@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .result {
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find Largest Integer</h2>
+        <div class="input-container">
+            <input type="text" id="num1" placeholder="Enter first number">
+            <input type="text" id="num2" placeholder="Enter second number">
+        </div>
+        <button onclick="findLargestInteger()">Find Largest Integer</button>
+        <p id="largestIntegerResult" class="result"></p>
+    </div>
+
+    <div class="container">
+        <h2>Convert First Letter to Uppercase</h2>
+        <div class="input-container">
+            <input type="text" id="inputString" placeholder="Enter a string">
+        </div>
+        <button onclick="convertFirstLetterToUppercase()">Convert</button>
+        <p id="convertedStringResult" class="result"></p>
+    </div>
+
+    <div class="container">
+        <h2>Find Longest Word</h2>
+        <div class="input-container">
+            <input type="text" id="inputWords" placeholder="Enter words separated by spaces">
+        </div>
+        <button onclick="findLongestWord()">Find Longest Word</button>
+        <p id="longestWordResult" class="result"></p>
+    </div>
+
+    <div class="container">
+        <h2>Odd and Even Numbers</h2>
+        <button onclick="findOddAndEvenNumbers()">Find Odd and Even Numbers</button>
+        <p id="oddEvenNumbersResult" class="result"></p>
+    </div>
+
+    <div class="container">
+        <h2>Generate Random String</h2>
+        <button onclick="generateRandomString()">Generate Random String</button>
+        <p id="randomStringResult" class="result"></p>
+    </div>
+
+    <div class="container">
+        <h2>Prime Numbers in Interval</h2>
+        <div class="input-container">
+            <input type="text" id="startInterval" placeholder="Enter start of interval">
+            <input type="text" id="endInterval" placeholder="Enter end of interval">
+        </div>
+        <button onclick="printPrimeNumbers()">Print Prime Numbers</button>
+        <p id="primeNumbersResult" class="result"></p>
+    </div>
+
+    <div class="container">
+        <h2>Populate Drop-down Box</h2>
+        <select id="dropdown"></select>
+        <button onclick="populateDropdown()">Populate Drop-down Box</button>
+    </div>
+
+    <script>
+        function findLargestInteger() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var result = num1 > num2 ? num1 : num2;
+            document.getElementById('largestIntegerResult').innerText = "The largest integer is: " + result;
+        }
+
+        function convertFirstLetterToUppercase() {
+            var inputString = document.getElementById('inputString').value;
+            var words = inputString.split(" ");
+            var result = "";
+            for (var i = 0; i < words.length; i++) {
+                result += words[i].charAt(0).toUpperCase() + words[i].slice(1) + " ";
+            }
+            document.getElementById('convertedStringResult').innerText = "Converted string: " + result.trim();
+        }
+
+        function findLongestWord() {
+            var inputWords = document.getElementById('inputWords').value;
+            var words = inputWords.split(" ");
+            var longestWord = "";
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].length > longestWord.length) {
+                    longestWord = words[i];
+                }
+            }
+            document.getElementById('longestWordResult').innerText = "Longest word: " + longestWord;
+        }
+
+        function findOddAndEvenNumbers() {
+            var oddNumbers = [];
+            var evenNumbers = [];
+            for (var i = 1; i <= 100; i++) {
+                if (i % 2 === 0) {
+                    evenNumbers.push(i);
+                } else {
+                    oddNumbers.push(i);
+                }
+            }
+            document.getElementById('oddEvenNumbersResult').innerText = "Odd Numbers: " + oddNumbers.join(", ") + "\n" +
+                                                                         "Even Numbers: " + evenNumbers.join(", ");
+        }
+
+        function generateRandomString() {
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var length = 8;
+            var randomString = '';
+            for (var i = 0; i < length; i++) {
+                var randomIndex = Math.floor(Math.random() * characters.length);
+                randomString += characters.charAt(randomIndex);
+            }
+            document.getElementById('randomStringResult').innerText = "Random String: " + randomString;
+        }
+
+        function isPrime(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+            if (num % 2 === 0 || num % 3 === 0) return false;
+            for (var i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+            return true;
+        }
+
+        function printPrimeNumbers() {
+            var start = parseInt(document.getElementById('startInterval').value);
+            var end = parseInt(document.getElementById('endInterval').value);
+            var primeNumbers = [];
+            for (var i = start; i <= end; i++) {
+                if (isPrime(i)) {
+                    primeNumbers.push(i);
+                }
+            }
+            document.getElementById('primeNumbersResult').innerText = "Prime Numbers: " + primeNumbers.join(", ");
+        }
+
+        function populateDropdown() {
+            var dropdown = document.getElementById('dropdown');
+            for (var i = 1; i <= 1000; i++) {
+                var option = document.createElement('option');
+                option.text = i;
+                dropdown.add(option);
+            }
+        }
+    </script>
+</body>
+</html>
